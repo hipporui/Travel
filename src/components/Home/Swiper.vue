@@ -19,6 +19,7 @@ export default {
     return {
       swiperOptions:{
         pagination:'.swiper-pagination',
+        // paginationType:'fraction',
         loop:true
       },
     }
@@ -36,7 +37,7 @@ export default {
 .wrapper{
   width: 100%;
   height: 0;
-  padding-bottom: 40%;
+  padding-bottom: 30%;
   overflow: hidden;
   
 }

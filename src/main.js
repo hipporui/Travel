@@ -5,6 +5,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import fastclick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store'
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
@@ -17,5 +18,6 @@ fastclick.attach(document.body)
 
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount('#app')

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   <HomeHeader :city="city"/>
+   <HomeHeader/>
    <Swiper :swiperList="swiperList"/>
    <Icons :List="iconList"/>
    <Recommend :recommendList="recommendList"/>
@@ -16,6 +16,7 @@ import Swiper from '../components/Home/Swiper'
 import Icons from '../components/Home/Icons'
 import Recommend from '../components/Home/Recommend'
 import Weekend from '../components/Home/Weekend'
+import {mapState} from 'vuex'
 export default {
   name: 'Home',
   components: {
@@ -27,24 +28,37 @@ export default {
   },
   data() {
     return {
-      city:'揭阳',
+      lastCity:'',
       swiperList:[],
       iconList:[],
       recommendList:[],
       weekendList:[],
     }
   },
-  methods: {
-    
+  computed: {
+    ...mapState(['city'])
   },
   mounted() {
-     this.axios('/api/index').then(res=>{
+    this.lastCity = this.city;
+     this.axios('/api/index?city=' + this.city).then(res=>{
        console.log(res.data.data);
        this.swiperList = res.data.data.swiperList;
        this.iconList = res.data.data.iconList;
        this.recommendList = res.data.data.recommendList;
        this.weekendList = res.data.data.weekendList;
      })
+  },
+  activated() {
+    if(this.lastCity !== this.city){
+      this.lastCity = this.city;
+       this.axios('/api/index?city=' + this.city).then(res=>{
+      //  console.log(res.data.data);
+       this.swiperList = res.data.data.swiperList;
+       this.iconList = res.data.data.iconList;
+       this.recommendList = res.data.data.recommendList;
+       this.weekendList = res.data.data.weekendList;
+     })
+    }
   },
 }
 </script>

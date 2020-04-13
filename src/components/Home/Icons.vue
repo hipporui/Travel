@@ -45,14 +45,13 @@ export default {
   margin-top: .1rem;
   // overflow: hidden;
   height: 0;
-  padding-bottom: 50%;
+  padding-bottom: 42%;
   
   .icon{
     position: relative;
-    width: 25%;
+    width: 20%;
     float: left;
     height: 0;
-    // background: chocolate;
     padding-bottom: 25%;
     .icon-img{
       position: absolute;
@@ -67,7 +66,9 @@ export default {
       .icon-img-content{
         display: block;
         margin: 0 auto;
-        height: 100%;
+        // height: 100%;
+        height: .8rem;
+        width: .8rem;
       }
     }
     .icon-desc{
@@ -76,9 +77,11 @@ export default {
       right: 0;
       bottom: 0;
       height: .44rem;
+      padding-bottom: .5rem;
       color: $darkTextColor;
       line-height: .44rem;
       text-align: center;
+      font-size: .24rem;
        @include ellipsis();
     }
   }
