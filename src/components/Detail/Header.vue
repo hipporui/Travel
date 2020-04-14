@@ -42,6 +42,10 @@ export default {
   activated() {
     window.addEventListener('scroll',this.handleScroll)
   },
+  //页面即将被替换成其他页面的时候会调用
+  deactivated() {
+    window.removeEventListener('scroll',this.handleScroll)
+  },
   components:{
     
   },
@@ -68,6 +72,7 @@ export default {
   }
 
   .header-fixed{
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
