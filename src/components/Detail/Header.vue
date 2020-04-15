@@ -29,7 +29,7 @@ export default {
         let opacity= top/140
         opacity = opacity>1?1:opacity
         this.opacityStyle = {
-          opacity
+          opacity 
         }
         this.showAbs = false
       }else{
@@ -42,14 +42,10 @@ export default {
   activated() {
     window.addEventListener('scroll',this.handleScroll)
   },
-  //页面即将被替换成其他页面的时候会调用
+  // 页面即将被替换成其他页面的时候会调用
   deactivated() {
     window.removeEventListener('scroll',this.handleScroll)
-  },
-  components:{
-    
-  },
-  
+  }
 }
 </script>
 

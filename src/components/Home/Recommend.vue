@@ -34,6 +34,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/styles/mixins.scss';
   .title{
+    padding-left: .2rem;
     margin-top: .2rem;
     line-height: .8rem;
     background:#eee;

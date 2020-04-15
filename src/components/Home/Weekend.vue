@@ -37,6 +37,7 @@ export default {
     line-height: .8rem;
     background:#eee;
     text-align: .2rem;
+    padding-left: .2rem;
   }
   .item-imgwrapper{
     overflow: hidden;
